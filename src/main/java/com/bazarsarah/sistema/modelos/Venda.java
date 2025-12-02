@@ -1,6 +1,5 @@
 package com.bazarsarah.sistema.modelos;
 
-import java.time.LocalDateTime;
 import java.io.Serializable;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,45 +15,50 @@ public class Venda implements Serializable{
 	private static final long serialVersionUID = 1l;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long venda_id;
-	private String codigo;
-	private String forma_pagamento;
-	private Integer valor_total;
-	public Long getVenda_id() {
-		return venda_id;
+	private Long produto_id;
+	private String nome;
+	private String descricao;
+	private Integer preco;
+	private long quantidade_estoque;
+	private Boolean ativo;
+	public Long getProduto_id() {
+		return produto_id;
 	}
-	public void setVenda_id(Long venda_id) {
-		this.venda_id = venda_id;
+	public void setProduto_id(Long produto_id) {
+		this.produto_id = produto_id;
 	}
-	public String getCodigo() {
-		return codigo;
+	public String getNome() {
+		return nome;
 	}
-	public void setCodigo(String codigo) {
-		this.codigo = codigo;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
-	public String getForma_pagamento() {
-		return forma_pagamento;
+	public String getDescricao() {
+		return descricao;
 	}
-	public void setForma_pagamento(String forma_pagamento) {
-		this.forma_pagamento = forma_pagamento;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
-	public Integer getValor_total() {
-		return valor_total;
+	public Integer getPreco() {
+		return preco;
 	}
-	public void setValor_total(Integer valor_total) {
-		this.valor_total = valor_total;
+	public void setPreco(Integer preco) {
+		this.preco = preco;
 	}
-	public LocalDateTime getData_hora() {
-		return data_hora;
+	public long getQuantidade_estoque() {
+		return quantidade_estoque;
 	}
-	public void setData_hora(LocalDateTime data_hora) {
-		this.data_hora = data_hora;
+	public void setQuantidade_estoque(long quantidade_estoque) {
+		this.quantidade_estoque = quantidade_estoque;
 	}
-	private LocalDateTime data_hora;
-	
-	
-	
-
-	
+	public Boolean getAtivo() {
+		return ativo;
+	}
+	public void setAtivo(Boolean ativo) {
+		this.ativo = ativo;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 	
 }

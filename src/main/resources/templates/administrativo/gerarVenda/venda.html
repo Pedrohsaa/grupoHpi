@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../../components/Footer/Footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <title>Depósito - Gerar Venda</title>
+    <title>Depósito - Estoque</title>
 </head>
 
 <body>
@@ -21,19 +21,13 @@
         <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
             <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
         </symbol>
-        <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-        </symbol>
-        <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-        </symbol>
     </svg>
 
     <!-- NavBar -->
     <div id="nav" class="bg-dark d-flex justify-content-between align-items-center w-100 mb-2">
         <span class="ms-3" style="width: 25px;"></span>
         <a href="../menu/index.html" class="h-100">
-            <img src="/assets/images/logo/2logo.png" alt="Logo" id="logo" class="h-100">
+            <img src="../../assets/images/logo/Logo.png" alt="Logo" id="logo" class="h-100">
         </a>
         <a href="../../auth.html" class="me-3 bg-transparent border-0 text-decoration-none">
             <i class="fa-solid fa-right-from-bracket text-white" id="logout" style="font-size: 25px;"></i>
@@ -43,66 +37,120 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb ps-2 fw-bold">
             <li class="breadcrumb-item"><a href="../menu/index.html">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Gerar Venda</li>
+            <li class="breadcrumb-item active" aria-current="page">Estoque</li>
         </ol>
     </nav>
 
-    <main class="container-fluid">
-        <div class="row">
-            <div class="col-md-9 col-12 mb-4 mb-md-0">
-                <form class="d-flex justify-content-end mb-3">
-                    <div class="col-6 p-0">
-                        <div class="input-group input-group-sm">
-                            <input type="search" class="form-control" placeholder="Insira o código do produto"/>
-                            <button type="button" class="btn btn-outline-primary">Buscar</button>
-                        </div>
-                    </div>
-                </form>
-
-                <div>
-                    <table class="table table-info table-striped">
-                        <thead>
-                            <tr>
-                                <th scope="col">Código</th>
-                                <td scope="col">Nome</td>
-                                <td scope="col">Preço</td>
-                                <td scope="col">Quantidade</td>
-                                <td scope="col">Opções</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope='row'>001</th>
-                                <td>PRODUTO EXEMPLO</td>
-                                <td>R$ 50,00</td>
-                                <td><input type="number" class="form-control form-control-sm" value="1" min="1"></td>
-                                <td>
-                                    <button type="button" class="btn btn-danger btn-sm">
-                                        <i class="fa-solid fa-xmark"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+    <main class="container">
+        <form class="col-12 col-md-6 float-end row justify-content-between mb-3">
+            <div class="col-8 p-0">
+                <div class="input-group input-group-sm">
+                    <input type="search" class="form-control" placeholder="Buscar por código do produto"/>
+                    <button type="button" class="btn btn-outline-primary">Buscar</button>
                 </div>
             </div>
 
-            <form class="col-md-3 col-12 mb-3 mb-md-0">
-                <div class="mb-3">
-                    <label for="pagamento" class="form-label">Forma de Pagamento</label>
-                    <input type="text" class="form-control form-control-sm" id="pagamento">
-                </div>
+            <button type="button" class="btn btn-primary btn-sm col-3" data-bs-toggle="modal" data-bs-target="#infoProduto">
+                <i class="fa-solid fa-plus"></i> Novo
+            </button>
+        </form>
 
-                <div class="mb-3">
-                    <label for="total" class="form-label">Valor Total</label>
-                    <input type="text" class="form-control form-control-sm" id="total" value="R$ 50,00" disabled>
-                </div>
-
-                <button type="submit" class="btn btn-sm btn-success w-100">
-                    Finalizar
-                </button>
-            </form>
+        <div>
+            <table class="table table-info table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Código</th>
+                        <td scope="col">Nome</td>
+                        <td scope="col">Categoria</td>
+                        <td scope="col">Preço</td>
+                        <td scope="col">Em Estoque</td>
+                        <td scope="col">Opções</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope='row'>001</th>
+                        <td>Produto Exemplo 1</td>
+                        <td>Categoria A</td>
+                        <td>R$ 50,00</td>
+                        <td>10</td>
+                        <td>
+                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#infoProduto">
+                                <i class="fa-solid fa-pencil"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger btn-sm">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+
+        <!-- MODAL -->
+        <div class="modal fade" id="infoProduto" tabindex="-1" aria-labelledby="infoProdutoLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="infoProdutoLabel">Produto</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <form class="h-100 d-flex flex-column" th:field="*{produtos}">
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label for="nome" class="form-label">Nome</label>
+                                <input type="text" class="form-control form-control-sm" id="nome" th:field="*{nome}">
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-4 col-12 mb-3 mb-md-0">
+                                    <label for="categoria" class="form-label">Categoria</label>
+                                    <select class="form-select form-select-sm" th:field="*{}" id="categoria">
+                                        <option selected>Selecione</option>
+                                        <option>Categoria A</option>
+                                        <option>Categoria B</option>
+                                        <option>Categoria C</option>
+                                        <option>Categoria D</option>
+                                        <option>Categoria E</option>
+                                        
+                                    </select>
+                                </div>
+                                <div class="col-md-4 col-12 mb-3 mb-md-0">
+                                    <label for="preco" class="form-label">Preço</label>
+                                    <input type="text" class="form-control form-control-sm" id="preco">
+                                </div>
+                                <div class="col-md-4 col-12 mb-3 mb-md-0">
+                                    <label for="quantidade" class="form-label">Em Estoque</label>
+                                    <input type="number" class="form-control form-control-sm" id="quantidade">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-6">
+                                    <label for="marca" class="form-label">Marca</label>
+                                    <input type="text" class="form-control form-control-sm" id="marca">
+                                </div>
+                                <div class="col-6">
+                                    <label for="modelo" class="form-label">Modelo</label>
+                                    <input type="text" class="form-control form-control-sm" id="modelo">
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="adicionais" class="form-label">Adicionais</label>
+                                <textarea class="form-control" id="adicionais" placeholder="Informações adicionais"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Salvar</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <!-- Footer -->

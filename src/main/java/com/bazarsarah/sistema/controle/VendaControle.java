@@ -6,18 +6,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.bazarsarah.sistema.repositorios.CategoriaRepositorio;
+import com.bazarsarah.sistema.repositorios.VendaRepositorio;
 
 @Controller
 public class VendaControle {
 	
 	@Autowired 
-	private CategoriaRepositorio categoriaRepositorio;
+	private VendaRepositorio vendaRepositorio;
 	
-	@GetMapping("/gerarvendas")
+	@GetMapping("/estoque")
 	public ModelAndView cadastrar(Item item) {
-		ModelAndView mv = new ModelAndView("/administrativo/estoque/gerarvenda");
-		mv.addObject("Item", item)
+		ModelAndView mv = new ModelAndView("/administrativo/estoque/index.html");
+		mv.addObject("Item", item);
+		return mv;
 	}
 
 }
