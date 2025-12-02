@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- STYLES -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="../../components/NavBar/NabBar.css">
+    <link rel="stylesheet" type="text/css" href="../../components/Footer/Footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <title>Estoque - Menu</title>
+</head>
+<body>
+
+    <!-- NavBar -->
+    <div id="nav" class="bg-dark d-flex justify-content-between align-items-center w-100 mb-2">
+        <span class="ms-3" style="width: 25px;"></span>
+        <a href="../menu/index.html" class="h-100">
+           <img src="/assets/images/logo/2logo.png" alt="Logo" id="logo" class="h-100">
+        </a>
+        <a href="../../auth.html" class="me-3 bg-transparent border-0 text-decoration-none">
+            <i class="fa-solid fa-right-from-bracket text-white" id="logout" style="font-size: 25px;"></i>
+        </a>
+    </div>
+
+    <main class="container">
+        <h3>Olá, Usuário</h3>
+        <div class="row pt-2">
+            <div class="col-12 col-md-4 mb-4 mb-md-0">
+                <a href="../estoque/index.html" class="text-decoration-none text-dark">
+                    <div class="text-center menu">
+                        <i class="fa-solid fa-dolly d-block p-3"></i>
+                        <span class="text-white bg-dark d-block p-1 legenda">
+                            Estoque
+                        </span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-12 col-md-4 mb-4 mb-md-0">
+                <a href="../vendas/index.html" class="text-decoration-none text-dark">
+                    <div class="text-center menu">
+                        <i class="fa-solid fa-receipt d-block p-3"></i>
+                        <span class="text-white bg-dark d-block p-1 legenda">
+                            Vendas
+                        </span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-12 col-md-4 mb-4 mb-md-0">
+                <a href="../gerarVenda/index.html" class="text-decoration-none text-dark">
+                    <div class="text-center menu">
+                        <i class="fa-solid fa-cash-register d-block p-3"></i>
+                        <span class="text-white bg-dark d-block p-1 legenda">
+                            Gerar Venda
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div class="w-100 d-flex justify-content-center text-center pt-3" id="rodape">
+        Bazar da Sarah &copy; </br>
+        Todos os direitos reservados.
+    </div>
+</body>
+</html>
