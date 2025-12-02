@@ -6,17 +6,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.bazarsarah.sistema.repositorios.VendaRepositorio;
+import com.bazarsarah.sistema.repositorios.EstoqueRepositorio;
 
 @Controller
-public class VendaControle {
+public class EstoqueControle {
 	
 	@Autowired 
-	private VendaRepositorio vendaRepositorio;
+	private EstoqueRepositorio estoqueRepositorio;
 	
 	@GetMapping("/estoque")
 	public ModelAndView cadastrar(Item item) {
-		ModelAndView mv = new ModelAndView("/administrativo/estoque/index.html");
+		ModelAndView mv = new ModelAndView("/administrativo/estoque/estoque.html");
 		mv.addObject("Item", item);
 		return mv;
 	}

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,38 +8,67 @@
     <!-- STYLES -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="../../components/NavBar/NabBar.css">
+    <link rel="stylesheet" type="text/css" href="../../components/Footer/Footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <title>Depósito</title>
+    <title>Depósito - Menu</title>
 </head>
-
 <body>
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-        <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
-          <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-        </symbol>
-    </svg>
 
-    <main>
-        <div id="login-container">
-            <h2>Login</h2>
-            <form class="my-3" action="./modules/menu/index.html" method="get">
-                <div class="mb-3">
-                    <label for="usuario" class="form-label">Usuário</label>
-                    <input type="email" class="form-control" id="usuario" placeholder="Informe o email">
-                </div>
+    <!-- NavBar -->
+    <div id="nav" class="bg-dark d-flex justify-content-between align-items-center w-100 mb-2">
+        <span class="ms-3" style="width: 25px;"></span>
+        <a href="../menu/index.html" class="h-100">
+           <img src="/assets/images/logo/2logo.png" alt="Logo" id="logo" class="h-100">
+        </a>
+        <a href="../../auth.html" class="me-3 bg-transparent border-0 text-decoration-none">
+            <i class="fa-solid fa-right-from-bracket text-white" id="logout" style="font-size: 25px;"></i>
+        </a>
+    </div>
 
-                <div class="mb-3">
-                    <label for="senha" class="form-label">Senha</label>
-                    <input type="password" class="form-control" id="senha" placeholder="******">
-                </div>
+    <main class="container">
+        <h3>Olá, Usuário</h3>
+        <div class="row pt-2">
+            <div class="col-12 col-md-4 mb-4 mb-md-0">
+                <a href="../estoque/index.html" class="text-decoration-none text-dark">
+                    <div class="text-center menu">
+                        <i class="fa-solid fa-dolly d-block p-3"></i>
+                        <span class="text-white bg-dark d-block p-1 legenda">
+                            Estoque
+                        </span>
+                    </div>
+                </a>
+            </div>
 
-                <div class="text-end">
-                    <button type="button" class="btn btn-secondary btn-sm">Cancelar</button>
-                    <button type="submit" class="btn btn-primary btn-sm">Login</button>
-                </div>
-            </form>
+            <div class="col-12 col-md-4 mb-4 mb-md-0">
+                <a href="../vendas/index.html" class="text-decoration-none text-dark">
+                    <div class="text-center menu">
+                        <i class="fa-solid fa-receipt d-block p-3"></i>
+                        <span class="text-white bg-dark d-block p-1 legenda">
+                            Vendas
+                        </span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-12 col-md-4 mb-4 mb-md-0">
+                <a href="../gerarVenda/index.html" class="text-decoration-none text-dark">
+                    <div class="text-center menu">
+                        <i class="fa-solid fa-cash-register d-block p-3"></i>
+                        <span class="text-white bg-dark d-block p-1 legenda">
+                            Gerar Venda
+                        </span>
+                    </div>
+                </a>
+            </div>
         </div>
     </main>
-</body>
 
+    <!-- Footer -->
+    <div class="w-100 d-flex justify-content-center text-center pt-3" id="rodape">
+        Bazar da Sarah &copy; </br>
+        Todos os direitos reservados.
+    </div>
+</body>
 </html>

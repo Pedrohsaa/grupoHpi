@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="vendas")
-public class Venda implements Serializable{
+public class Estoque implements Serializable{
 	private static final long serialVersionUID = 1l;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
